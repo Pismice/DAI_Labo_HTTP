@@ -10,3 +10,13 @@ COPY: permet de copier nos dossiers sources locaux dans la container pour que ce
 ### Fichiers configs Apache
 `/etc/apache2`
 C'est ici que sur un serveur Debian se trouve les fichier de configuration pour permettre notamment l'utilisation de Virtual Hosts
+
+## STEP 2 
+### Partie a 
+1. Création du fichier Dockerfile qui contient les informations de l'image node à utiliser ainsi que les 
+actions qui seront effectuées avec celle-ci: coper le code puis l'éxécuter.
+2. Installation de chance avec: npm install --save chance. Chance est un programme que l'on peut trouver
+sur npm qui est le package manager de node
+3. Utilisation de Chance dans le code pour saluer chaleuresement des peronnes aux hasard
+4. Docker build
+5. Docker run qui affiche bien le nom d'une personne aléatoire
