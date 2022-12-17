@@ -1,4 +1,4 @@
-# DAI_Labo_HTTP
+ DAI_Labo_HTTP
 ## STEP 1
 ### Demo
 1. Build l'image Docker : docker build -t dai/apache_php . 
@@ -20,3 +20,12 @@ sur npm qui est le package manager de node
 3. Utilisation de Chance dans le code pour saluer chaleuresement des peronnes aux hasard
 4. Docker build
 5. Docker run qui affiche bien le nom d'une personne aléatoire
+### Partie b
+1. Installation du framework Express dans notre dossier source: npm install --save express
+2. Ecriture du code Express qui permet de renvoyer des personnes aléatoires sous format JSON
+en utilisant Chance (déjà vu dans la partie a)
+3. Pour tester notre code nous allons maintenant utiliser 2 méthodes différentes:
+- Utilisation de busybox: ce container va nous permettre de nous "infiltrer" directement dans le réseau et accèder via cette busybox à notre serveur node.
+On récupère l'adresse ip de notre container avec "docker inspect NOM_DU_CONTAINER", puis en observant le champs IPAdress 
+- La 2ème méthode consiste à mapper le port de notre container sur un port localhost avec la commande suivante: docker run --publish 3000:3000 dai/express. Nous pouvons désormais utiliser Postman ou Insomnia pour effectuer des requêtes HTTP préparées sur notre localhost:3000
+
