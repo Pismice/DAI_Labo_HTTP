@@ -29,3 +29,8 @@ en utilisant Chance (déjà vu dans la partie a)
 On récupère l'adresse ip de notre container avec "docker inspect NOM_DU_CONTAINER", puis en observant le champs IPAdress 
 - La 2ème méthode consiste à mapper le port de notre container sur un port localhost avec la commande suivante: docker run --publish 3000:3000 dai/express. Nous pouvons désormais utiliser Postman ou Insomnia pour effectuer des requêtes HTTP préparées sur notre localhost:3000
 
+## STEP 3: Docker
+1. Création du fichier docker-compose.yml
+2. Edition du fichier pour mapper le port 80 de apache et 3000 sur 5000 et 5001
+3. "docker compose up" et les 2 services démarrent
+
