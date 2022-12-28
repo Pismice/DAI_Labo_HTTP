@@ -1,11 +1,25 @@
 services:
+  reverse-proxy:
+    # The official v2 Traefik docker image
+    image: traefik:v2.9
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
   static:
     build: ./apache-php-image
-    ports: 
-        - "5000:80"
-    dynamic:
-      build: ./epxress-image
-      ports:
-        - "5001:3000"
+    labels:
+      - "traefik.http.routers.static.rule=Host(`localhost`)"
+  dynamic:
+    build: ./epxress-image
+    labels:
+      - "traefik.http.routers.dynamic.rule=PathPrefix(`/api`)"
+
 
 

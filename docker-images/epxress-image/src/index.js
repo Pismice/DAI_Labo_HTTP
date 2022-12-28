@@ -23,24 +23,24 @@ function generateStudents() {
     max: 10,
   });
   console.log(numberOfStudents);
-  const students = [];
+  const strangers = [];
   for (let i = 0; i < numberOfStudents; i++) {
     const gender = chance.gender();
     const birthYear = chance.year({
       min: 1998,
       max: 2004,
     });
-    students.push({
+    strangers.push({
       firstName: chance.first({
         gender: gender,
       }),
-      lastName: chance.last(),
+      lastName: chance.city(),
       gender: gender,
       birthday: chance.birthday({
         year: birthYear,
       }),
     });
   }
-  console.log(students);
-  return students;
+  console.log(strangers);
+  return strangers;
 }

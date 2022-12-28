@@ -11,7 +11,7 @@ COPY: permet de copier nos dossiers sources locaux dans la container pour que ce
 `/etc/apache2`
 C'est ici que sur un serveur Debian se trouve les fichier de configuration pour permettre notamment l'utilisation de Virtual Hosts
 
-## STEP 2 
+## STEP 2 TODO: SCRIPT MODIF DOCKERFILE POUR NPM INSTALL ?
 ### Partie a 
 1. Création du fichier Dockerfile qui contient les informations de l'image node à utiliser ainsi que les 
 actions qui seront effectuées avec celle-ci: coper le code puis l'éxécuter.
