@@ -4,6 +4,6 @@ COPY src /opt/app
 
 WORKDIR /opt/app
 
-CMD ["npm", "i"]
+RUN npm install
 
-CMD ["node", "opt/app/index.js"]
+CMD [ "node", "index.js" ]
