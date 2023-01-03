@@ -5,17 +5,26 @@ const express = require("express");
 const app = express();
 
 // Attention à l'ordre
+app.get("/", function (req, res) {
+  //  res.send(generateStudents());
+  appStarted();
+});
 app.get("/test", function (req, res) {
   res.send("Hello DAI test");
 });
-
-app.get("/", function (req, res) {
-  res.send(generateStudents());
+app.get("/api", function (req, res) {
+  res.send("GRRRR je suis sur api (test)");
 });
 
 app.listen(3000, function () {
   console.log("app listening on port 3000");
 });
+
+function appStarted() {
+  setInterval(async () => {
+    res.send(await fetch(`localhost/`));
+  }, 200);
+}
 
 function generateStudents() {
   const numberOfStudents = chance.integer({
