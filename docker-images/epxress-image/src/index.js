@@ -36,8 +36,8 @@ function generateStudents() {
   for (let i = 0; i < numberOfStudents; i++) {
     const gender = chance.gender();
     const birthYear = chance.year({
-      min: 1998,
-      max: 2004,
+      min: 1800,
+      max: 1900,
     });
     strangers.push({
       firstName: chance.first({
