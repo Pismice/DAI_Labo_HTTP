@@ -28,4 +28,3 @@ services:
       - "traefik.http.routers.dynamic.middlewares=dynamic-stripprefix"
       - "traefik.http.middlewares.dynamic-stripprefix.stripprefix.prefixes=/api"
       - "traefik.http.routers.dynamic.rule=Host(`localhost`) && Path(`/api`)"
-      - "traefik.http.services.dynamic.loadbalancer.server.port=3001"
