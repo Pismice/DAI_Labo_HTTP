@@ -34,3 +34,7 @@ On récupère l'adresse ip de notre container avec "docker inspect NOM_DU_CONTAI
 2. Edition du fichier pour mapper le port 80 de apache et 3000 sur 5000 et 5001
 3. "docker compose up" et les 2 services démarrent
 
+## STEP 3a: Ajout de clusters
+Il suffit de rajouter scale: x (x étant de le nombre d'instances) pour chaque image.
+On peut voir que par défaut les sessions ne sont pas sticky: 
+![](rapport_images/1.png)

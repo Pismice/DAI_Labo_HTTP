@@ -16,12 +16,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   static:
     build: ./apache-php-image
+    scale: 3
     labels:
       - "traefik.http.routers.static.rule=Host(`localhost`)"
       - "traefik.http.routers.static.entrypoints=web"
       - "traefik.http.services.webapp.loadbalancer.server.port=80"
   dynamic:
     build: ./epxress-image
+    scale: 3
     labels:
       - "traefik.http.routers.dynamic.rule=Host(`localhost`)"
       - "traefik.http.services.dynamic.loadbalancer.server.port=3000"
