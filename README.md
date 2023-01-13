@@ -39,3 +39,8 @@ On récupère l'adresse ip de notre container avec "docker inspect NOM_DU_CONTAI
 Il suffit de rajouter scale: x (x étant de le nombre d'instances) pour chaque image.
 On peut voir que par défaut les sessions ne sont pas sticky: 
 ![](rapport_images/1.png)
+
+## STEP 4: AJAX avec Fetch API
+Voici le code côté client (frontend) qui va permettre à intervalle régulier de redemander de nouvelles données au server express (backend) et les rafficher.
+J'ai utilisé pour faire la Fetch API
+![](rapport_images/2.png)

@@ -1,5 +1,6 @@
 // Use this file to add JavaScript to your project
 
+// Retourne la liste des animaux (en json)
 async function getAnimals() {
     let url = '/api';
     try {
@@ -10,6 +11,7 @@ async function getAnimals() {
     }
 }
 
+// Render les animaux sur le site en HTML
 async function renderAnimals() {
     let animals = await getAnimals();
     let html = '';
@@ -26,4 +28,7 @@ async function renderAnimals() {
     container.innerHTML = html;
 }
 
-renderAnimals();
+// Render de nouveaux animaux toutes les secondes
+setInterval(() => {
+    this.renderAnimals();
+}, 1000);
