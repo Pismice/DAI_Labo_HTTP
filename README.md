@@ -44,3 +44,9 @@ On peut voir que par défaut les sessions ne sont pas sticky:
 Voici le code côté client (frontend) qui va permettre à intervalle régulier de redemander de nouvelles données au server express (backend) et les rafficher.
 J'ai utilisé pour faire la Fetch API
 ![](rapport_images/2.png)
+
+## STEP 5: Sticky sessions
+Pour rendre notre serveur static en sticky sessions il suffit de rajouter les lignes 17 et 18
+![](rapport_images/3.png)
+
+## STEP 6: Management UI

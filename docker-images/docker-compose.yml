@@ -21,6 +21,8 @@ services:
       - "traefik.http.routers.static.rule=Host(`localhost`)"
       - "traefik.http.routers.static.entrypoints=web"
       - "traefik.http.services.webapp.loadbalancer.server.port=80"
+      - "traefik.http.services.static-service.loadBalancer.sticky.cookie=true"
+      - "traefik.http.services.static-service.loadBalancer.sticky.cookie.name=static_server_cookie"
   dynamic:
     build: ./epxress-image
     scale: 3
