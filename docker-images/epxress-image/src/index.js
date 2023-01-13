@@ -6,50 +6,53 @@ const app = express();
 
 // Attention à l'ordre
 app.get("/", function (req, res) {
-  //  res.send(generateStudents());
-  appStarted();
+  res.send(generateWeirdAnimals());
 });
 app.get("/test", function (req, res) {
   res.send("Hello DAI test");
 });
 app.get("/api", function (req, res) {
-  res.send("GRRRR je suis sur api (test)");
+  res.send("Le routing est surement pas bon !");
 });
 
 app.listen(3000, function () {
   console.log("app listening on port 3000");
 });
 
-function appStarted() {
-  setInterval(async () => {
-    res.send(await fetch(`localhost/`));
-  }, 200);
-}
-
-function generateStudents() {
+function generateWeirdAnimals() {
   const numberOfStudents = chance.integer({
     min: 0,
     max: 10,
   });
-  console.log(numberOfStudents);
-  const strangers = [];
+  const animals = [];
   for (let i = 0; i < numberOfStudents; i++) {
+    // Création
+    const avatar = chance.avatar();
     const gender = chance.gender();
     const birthYear = chance.year({
       min: 1800,
       max: 1900,
     });
-    strangers.push({
+    const profession = chance.profession({
+      rank: true,
+    })
+    const animalType = chance.animal();
+    const birthday = chance.birthday({
+      year: birthYear,
+    })
+
+    // Ajout
+    animals.push({
+      avatar: avatar,
+      animal: animalType,
       firstName: chance.first({
         gender: gender,
       }),
-      lastName: chance.city(),
+      profession: profession,
       gender: gender,
-      birthday: chance.birthday({
-        year: birthYear,
-      }),
+      birthday: birthday,
     });
   }
-  console.log(strangers);
-  return strangers;
+  console.log(animals);
+  return animals;
 }
