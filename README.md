@@ -4,15 +4,16 @@ Donnée : https://github.com/HEIGVD-Course-DAI/DAI-2022-HTTP-Infra
 ### Demo
 1. Build l'image Docker : docker build -t dai/apache_php . 
 2. Run l'image Docker : docker run -d -p 9090:80 dai/apache_php:latest
-3. Accéder au contenu (index.html) du serveur à l'adresse suivante: localhost:9090
+3. Accéder au contenu (index.html) du serveur à l'adresse suivante: localhost:9090, car nous avons mappé le port 80 sur 9090
 ### Dockerfile
 FROM: permet de donner le nom de l'image parente (~template)
 COPY: permet de copier nos dossiers sources locaux dans la container pour que celui-ci puisse les afficher
+EXPOSE: permet de "montrer" son port à l'extérieur
 ### Fichiers configs Apache
 `/etc/apache2`
 C'est ici que sur un serveur Debian se trouve les fichier de configuration pour permettre notamment l'utilisation de Virtual Hosts
 
-## STEP 2 TODO: SCRIPT MODIF DOCKERFILE POUR NPM INSTALL ?
+## STEP 2
 ### Partie a 
 1. Création du fichier Dockerfile qui contient les informations de l'image node à utiliser ainsi que les 
 actions qui seront effectuées avec celle-ci: coper le code puis l'éxécuter.
@@ -20,7 +21,8 @@ actions qui seront effectuées avec celle-ci: coper le code puis l'éxécuter.
 sur npm qui est le package manager de node
 3. Utilisation de Chance dans le code pour saluer chaleuresement des peronnes aux hasard
 4. Docker build
-5. Docker run qui affiche bien le nom d'une personne aléatoire
+5. Docker run qui affiche bien le nom d'une personne aléatoire (dans notre cas un animal)
+![](rapport_images/6.png)
 ### Partie b
 1. Installation du framework Express dans notre dossier source: npm install --save express
 2. Ecriture du code Express qui permet de renvoyer des personnes aléatoires sous format JSON
@@ -55,3 +57,5 @@ Preuve que les sessions sont maintenant sticky grâce à plusieurs requêtes Pos
 ![](rapport_images/4.png)
 
 ## STEP 6: Management UI
+Portainer va nous permetttre de manager toute notre infrastructure, on accés à de multiples informations. Mais ce qui nous interesse c'est surtout la partie qui va nous permettre de créer, stopper, ... nos containers via cette page
+![](rapport_images/7.png)
