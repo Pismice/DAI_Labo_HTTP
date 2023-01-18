@@ -31,4 +31,4 @@ async function renderAnimals() {
 // Render de nouveaux animaux toutes les secondes
 setInterval(() => {
     this.renderAnimals();
-}, 1000);
+}, 5000);
