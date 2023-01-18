@@ -32,7 +32,10 @@ On récupère l'adresse ip de notre container avec "docker inspect NOM_DU_CONTAI
 
 ## STEP 3: Docker
 1. Création du fichier docker-compose.yml
-2. Edition du fichier pour mapper le port 80 de apache et 3000 sur 5000 et 5001
+Globalement dans ce fichier de configuration nous allons donner les service que nous voulons lancer ainsi que leur caractéristiques.
+Attention : Si on a EXPOSE nos ports dans les Dockerfile, il n y a pas besoin de mettre les lignes de configuration de port dans ce fichier.
+![](rapport_images/5.png)
+2. "docker compose build" pour build tous nos services ainsi que l'ensemble 
 3. "docker compose up" et les 2 services démarrent
 
 ## STEP 3a: Ajout de clusters
@@ -48,5 +51,7 @@ J'ai utilisé pour faire la Fetch API
 ## STEP 5: Sticky sessions
 Pour rendre notre serveur static en sticky sessions il suffit de rajouter les lignes 17 et 18
 ![](rapport_images/3.png)
+Preuve que les sessions sont maintenant sticky grâce à plusieurs requêtes Postman de suite :
+![](rapport_images/4.png)
 
 ## STEP 6: Management UI
